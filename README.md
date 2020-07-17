@@ -1,6 +1,8 @@
 # conv
 超简单的进制转换工具，十进制转换为不同进制（二进制、八进制、十六进制）的字符串格式
 
+feizhiwu/conv is a conversion util, you can use it convert  decimal to different string format(binary, octal, hexadecimal) 
+
 ## 和strconv.FormatInt的区别
 多了补位和负数支持
 
