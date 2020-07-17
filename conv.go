@@ -1,6 +1,8 @@
 package conv
 
-import "strconv"
+import (
+	"strconv"
+)
 
 func FormatInt(num int64, base, bitSize int) string {
 	var max int64 = 1<<bitSize - 1
@@ -11,5 +13,15 @@ func FormatInt(num int64, base, bitSize int) string {
 	if num < 0 {
 		num = max + num + 1
 	}
-	return strconv.FormatInt(num, base)
+	return fill(strconv.FormatInt(num, base), strconv.FormatInt(max, base))
+}
+
+func fill(s, l string) string {
+	if len(s) < len(l) {
+		n := len(l) - len(s)
+		for i := 0; i < n; i++ {
+			s = "0" + s
+		}
+	}
+	return s
 }
