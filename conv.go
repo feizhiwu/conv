@@ -12,6 +12,9 @@ func FormatInt(num int64, base, bitSize int) string {
 	//负数取补码
 	if num < 0 {
 		num = max + num + 1
+		if num < 0 {
+			num = 0
+		}
 	}
 	return fill(strconv.FormatInt(num, base), strconv.FormatInt(max, base))
 }
